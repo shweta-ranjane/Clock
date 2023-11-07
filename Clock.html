@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			box-sizing: border-box;
+		}
+		body{
+			background-image: url("https://i.pinimg.com/originals/f5/aa/a5/f5aaa5f8137e71efdcc8874ed2fa6265.gif");
+			height: 100vh;
+			width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+		}
+        .head{
+            height: 80px;
+            width: 100%;
+            background-color: pink;
+            padding-top: 20px;
+            color: rgb(122, 5, 5);
+
+        }
+        .clock{
+            color: white;
+            background-color: black;
+            height: 100px;
+            width: 400px;
+            margin-left: 580px;
+            margin-top: 30px;
+            padding: 10px;
+            padding-right: 50px;
+            align-items: center;
+            justify-content: center;
+            display: inline-flex;
+            border-radius: 10px;
+           }
+           .clock:hover{
+            transform: scale(0.9);
+            background-color: whitesmoke;
+            color: black;
+           }
+           #banner{
+            font-size: 30px;
+            font-weight: 100;
+            font-weight: bold;
+            color: rgb(122, 5, 5);
+            margin-top: 200px;
+            }
+            #hours{
+                font-size: 15px;
+                padding-top: 20px;
+            }
+            #mins{
+                font-size: 15px;
+                padding-top: 20px;
+            }
+            #secs{
+                font-size: 15px;
+                padding-top: 20px;
+            }
+
+            
+	</style>
+</head>
+<body>
+    <div class="head">
+        <marquee direction="left" width ="1500px" behavior="scroll" scrolldelay="10" hspace="25px" loop="infinite" scrollamount="10"><h1>Digital Clock</h1></marquee>
+    </div>
+     <div id="banner" align="center"><span>Your Local Time <img src="https://i1.wp.com/bestanimations.com/HomeOffice/Clocks/clock-animated-gif-5.gif" height="40px" width="40px"></span></div>
+    
+<div class ="clock">
+   
+<h1>
+	<span id="hr"></span><span id="hours"> Hours</span>:
+	<span id="min"></span><span id="mins"> Minutes</span>:
+	<span id="sec"></span><span id="secs"> Seconds</span>
+    <span id="ampm"></span>
+</h1>
+</div>
+<script type="text/javascript">
+	let hour = document.getElementById("hr");
+	let min = document.getElementById("min");
+	let sec = document.getElementById("sec");
+    let ampm = document.getElementById("ampm")
+
+	function updateTime() {
+		let tm = new Date();
+		let hr = tm.getHours();
+		let mn = tm.getMinutes();
+		let sc = tm.getSeconds();
+         
+		hour.innerHTML = hr-12;
+		min.innerHTML = mn;
+		sec.innerHTML = sc;
+        ampm.innerHTML = hr>=12?'PM':'AM';
+	}
+	setInterval(updateTime,1000);
+
+</script>
+</body>
+</html>
