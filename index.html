@@ -25,10 +25,11 @@
 
         }
         .clock{
+            position: relative;
             color: white;
             background-color: black;
             height: 100px;
-            width: 400px;
+            width: 420px;
             margin-left: 580px;
             margin-top: 30px;
             padding: 10px;
@@ -66,7 +67,7 @@
 </head>
 <body>
     <div class="head">
-        <marquee direction="left" width ="1500px" behavior="scroll" scrolldelay="10" hspace="25px" loop="infinite" scrollamount="10"><h1>Digital Clock</h1></marquee>
+        <marquee direction="left" width ="100%" behavior="scroll" scrolldelay="10" hspace="25px" loop="infinite" scrollamount="10"><h1>Digital Clock</h1></marquee>
     </div>
      <div id="banner" align="center"><span>Your Local Time <img src="https://i1.wp.com/bestanimations.com/HomeOffice/Clocks/clock-animated-gif-5.gif" height="40px" width="40px"></span></div>
     
@@ -91,7 +92,7 @@
 		let mn = tm.getMinutes();
 		let sc = tm.getSeconds();
          
-		hour.innerHTML = hr-12;
+		hour.innerHTML = hr%12||12;
 		min.innerHTML = mn;
 		sec.innerHTML = sc;
         ampm.innerHTML = hr>=12?'PM':'AM';
